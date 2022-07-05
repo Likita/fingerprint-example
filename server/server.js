@@ -54,7 +54,7 @@ app.post('/auth', cors(), function (request, res, next) {
             `https://eu.api.fpjs.io/visitors/${visitorId}?api_key=lCStvGG3XEvVeCePCg4C`
           )
           .then((response) => {
-            if (response.data && response.data?.visits?.length) {
+            if (response.data && response.data.visits && response.data.visits.length) {
               // If we have visits it means that visitorId exists. But we need to check that that visitorIds do not change each time.
 
               // We can use IP addresses from response to block hackers by IP
@@ -68,8 +68,7 @@ app.post('/auth', cors(), function (request, res, next) {
                   error ? console.log(error) : console.log('Event saved');
                 }
               );
-              console.log(username);
-              console.log(password);
+
               // Check: do we have a user with such credentials
               db.all(
                 `SELECT * FROM users WHERE username='${username}' AND pass='${password}'`,

@@ -3,6 +3,7 @@
 This example demostrates defence from Multiple login attemts using Fingerprint library.
 
 First of all we need to create a database and start the server to test the solution. For this run:
+
 ```sh
 cd server
 npm i
@@ -11,6 +12,7 @@ npm start
 ```
 
 In other terminal tab let's start the front server:
+
 ```sh
 cd fingerprint-task
 npm i
@@ -33,4 +35,5 @@ Login: 'silly' is blocked for first 5 minutes database.
 
 For more information check:
 [Documentation for the JavaScript agent](https://dev.fingerprintjs.com/docs/quick-start-guide#js-agent)
+
 [Documentation for the Server API](https://dev.fingerprintjs.com/docs/server-api)
